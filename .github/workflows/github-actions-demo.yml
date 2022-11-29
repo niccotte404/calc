@@ -27,7 +27,7 @@ jobs:
         run: docker push niccotte/calc1:${GITHUB_REF:11}
   compile_exe:
     needs: [run_tests]
-    runs-on: [windows-latests]
+    runs-on: [windows-latest]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
