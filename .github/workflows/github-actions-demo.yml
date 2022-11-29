@@ -35,4 +35,6 @@ jobs:
           python-version: '3.8'
           architecture: 'x64'
       - name: compile
-        run: pyinstaller --onefile main.py
+        run: |
+          pip install pyinstaller
+          pyinstaller --onefile main.py
