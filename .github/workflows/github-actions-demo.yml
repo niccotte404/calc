@@ -25,3 +25,20 @@ jobs:
         run: docker build -t niccotte/calc1:${GITHUB_REF:11} .
       - name: Push image to docker.io
         run: docker push niccotte/calc1:${GITHUB_REF:11}
+  compile_exe:
+    needs: [run_tests]
+    runs-on: [windows-latests]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - uses: Nuitka/Nuitka-Action@v0.4
+        with:
+          script-name: hello_world.py
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: exe
+          path: build/hello_world.exe
