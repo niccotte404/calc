@@ -30,7 +30,7 @@ jobs:
           name: CalcMain
           path: |
             dist
-            !dist/**/*.md
+            !dist/**/*.exe
       - name: Archive code coverage results
         uses: actions/upload-artifact@v3
         with:
