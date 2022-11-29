@@ -26,9 +26,8 @@ jobs:
       - name: compile
         run: |
           pip install pyinstaller
-          pyinstaller --onefile main.py
       - name: upload_artifact
         uses: actions/upload-artifact@v3
         with:
           name: exe
-          path: main.exe
+          path: pyinstaller --onefile main.py
