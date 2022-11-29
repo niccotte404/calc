@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: npm install, build, and test
+      - name: compile to exe
         run: |
           pip install pyinstaller
           pyinstaller --onefile main.py
